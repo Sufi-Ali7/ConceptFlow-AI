@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConceptFlow AI | Animated Learning Platform</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=correct-orbit-only" />
+</head>
+<body data-theme="dark">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" aria-label="ConceptFlow AI Home">
+        <span class="brand-icon">CF</span>
+        <span class="brand-name">Concept<span>Flow</span> AI</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#allLanguages">Subjects</a>
+        <a href="#courses">Courses</a>
+        <a href="#visualizer">Visualizer</a>
+        <a href="#dsaEngine">DSA Engine</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#practice">Practice</a>
+        <a href="#allLanguages">Languages</a>
+        <a href="#proChat">AI Chat</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#study">Study</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#adminPanel">Admin</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <button class="icon-btn" id="searchBtn" type="button" aria-label="Search">⌕</button>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+        <button class="login-btn" id="loginBtn" type="button">Login</button>
+        <button class="primary-nav-btn" id="getStartedBtn" type="button">Get Started</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="pill">AI + Animation + Practice + Career Roadmap</div>
+        <h1>Understand every <span>IT concept</span> with visual learning.</h1>
+        <p>
+          Learn DSA, Math, Programming, AI, ML, DBMS, OS, CN and trending technologies with
+          step-by-step AI explanations, animations, quizzes and personalized career paths.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-btn" href="#subjects">Start Learning Free <span>➜</span></a>
+          <a class="outline-btn" href="#roadmap">Explore Roadmaps</a>
+        </div>
+
+        <div class="metrics">
+          <div><b>5000+</b><span>Concepts</span></div>
+          <div><b>100+</b><span>Subjects</span></div>
+          <div><b>24/7</b><span>AI Tutor</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual cf-hero-orbit-fixed-scope" aria-label="Animated concept visualizer">
+        <div class="orbit">
+          <span class="bubble b1">🧠</span>
+          <span class="bubble b2">&lt;/&gt;</span>
+          <span class="bubble b3">📊</span>
+          <!-- <span class="bubble b4">📘</span> -->
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="gem"></div>
+          <div class="base-light"></div>
+        </div>
+      </div>
+
+      <aside class="solver-card">
+        <div class="solver-head">
+          <h2>🤖 AI Concept Solver</h2>
+          <button>History</button>
+        </div>
+
+        <p>Ask any IT, coding, DSA, Math, AI or career question.</p>
+
+        <div class="solver-input">
+          <input id="questionInput" placeholder="Type your question here or speak..." />
+          <button id="voiceBtn" class="voice-btn" title="Speak to type">🎙</button>
+          <button id="askBtn" title="Ask AI">➤</button>
+        </div>
+        <div class="voice-status" id="voiceStatus">Voice typing ready. Click mic and speak your question.</div>
+
+        <div class="example-grid">
+          <button data-question="Explain Binary Search with animation">⌕ Binary Search</button>
+          <button data-question="What is OS Scheduling?">▣ OS Scheduling</button>
+          <button data-question="Difference between SQL and NoSQL">◎ SQL vs NoSQL</button>
+          <button data-question="Time Complexity of Merge Sort">⌘ Merge Sort</button>
+        </div>
+
+        <div class="answer-actions">
+          <button id="speakAnswerBtn">🔊 Read Answer</button>
+          <button id="stopSpeakBtn">■ Stop Voice</button>
+        </div>
+
+        <div class="answer-box" id="answerBox">
+          <b>AI Preview:</b> Ask a question and get answer + how + why + concept source + exam format.
+        </div>
+      </aside>
+    </section>
+
+    <section class="search-panel">
+      <div class="search-left">
+        <span>⌕</span>
+        <div>
+          <h3>Search Any Subject or Topic</h3>
+          <p>Search built-in subjects or type any custom topic you want to learn.</p>
+        </div>
+      </div>
+
+      <div class="search-right">
+        <div class="search-box">
+          <input id="subjectSearch" placeholder="Search subjects, topics, concepts..." />
+          <button id="searchBtn">⌕</button>
+        </div>
+        <div class="chips">
+          <button data-search="Python">Python</button>
+          <button data-search="Machine Learning">Machine Learning</button>
+          <button data-search="DBMS">DBMS</button>
+          <button data-search="Linked List">Linked List</button>
+          <button data-search="Operating System">Operating System</button>
+          <button data-search="Deep Learning">Deep Learning</button>
+          <button data-search="React JS">React JS</button>
+          <button data-search="Cloud Computing">Cloud Computing</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="subjects">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Explore</p>
+          <h2>Subjects Library</h2>
+        </div>
+        <button id="showAllBtn">View All Subjects →</button>
+      </div>
+
+      
+<div class="subject-grid" id="subjectGrid">
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"></div>
+    <h3>Data Structures & Algorithms</h3><p>250+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"></div>
+    <h3>Operating System</h3><p>180+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"></div>
+    <h3>DBMS</h3><p>150+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg"></div>
+    <h3>Computer Networks</h3><p>120+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"></div>
+    <h3>Artificial Intelligence</h3><p>200+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"></div>
+    <h3>Machine Learning</h3><p>180+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"></div>
+    <h3>Deep Learning</h3><p>150+ Concepts</p>
+  </article>
+  <article class="subject-card">
+    <div class="real-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"></div>
+    <h3>More Subjects</h3><p>Explore All</p>
+  </article>
+</div>
+
+    </section>
+
+    <section class="tools-strip" aria-label="Learning tools">
+      <article><span class="tool-icon green">▶</span><div><h3>Animated Visualizer</h3><p>Learn with visual step-by-step animations.</p></div></article>
+      <article><span class="tool-icon purple">🤖</span><div><h3>AI Explanation</h3><p>Answer with how, why and source concept.</p></div></article>
+      <article><span class="tool-icon yellow">✓</span><div><h3>Practice Quiz</h3><p>Topic-wise MCQ and coding questions.</p></div></article>
+      <article><span class="tool-icon blue">&lt;/&gt;</span><div><h3>Code Dry Run</h3><p>Variables, loops and recursion visualized.</p></div></article>
+      <article><span class="tool-icon pink">🛣</span><div><h3>Career Roadmaps</h3><p>Goal-wise roadmap and market skills.</p></div></article>
+      <article><span class="tool-icon green">▥</span><div><h3>Progress Tracking</h3><p>Weak topic detection and learning reports.</p></div></article>
+    </section>
+
+    <section class="feature-grid section-gap" id="visualizer">
+      <article class="feature-card">
+        <h2>DSA Animation Visualizer</h2>
+        <p>Sorting, searching, stack, queue, linked list, tree, graph and recursion animation.</p>
+        <div class="bar-animation"><span></span><span></span><span></span><span></span><span></span></div>
+      </article>
+
+      <article class="feature-card" id="practice">
+        <h2>Quiz + Practice Engine</h2>
+        <p>Topic-wise tests with score, weak-topic detection and detailed explanation.</p>
+        <div class="mini-quiz">
+          <p><b>Question:</b> Which data structure uses FIFO?</p>
+          <button>Stack</button><button class="correct">Queue</button><button>Tree</button>
+        </div>
+      </article>
+
+      <article class="feature-card" id="roadmap">
+        <h2>Animated Career Roadmap</h2>
+        <p>AI Developer, Full Stack, ML Engineer, Data Scientist, Cyber Security, Cloud and DevOps.</p>
+        <div class="timeline"><span>Beginner</span><span>Build</span><span>Job Ready</span></div>
+      </article>
+    </section>
+
+    <section class="section study-section-clean" id="study">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Exam System</p>
+          <h2>Study Tools</h2>
+          <p class="section-subtitle">Generate notes, expected questions, viva answers and revision plans from topic or syllabus.</p>
+        </div>
+        <button id="myMaterialsBtn" type="button" class="cf-secondary-btn">My Materials →</button>
+      </div>
+
+      <div class="study-grid-clean">
+        <article class="study-card-clean">
+          <h3>📘 Notes Generator</h3>
+          <p>Create short + deep exam notes from syllabus or topic.</p>
+          <button type="button" data-study-action="notes">Generate Notes</button>
+        </article>
+
+        <article class="study-card-clean">
+          <h3>❓ Expected Questions</h3>
+          <p>Generate 1 mark, 2.5 mark and 5 mark questions with answers.</p>
+          <button type="button" data-study-action="questions">Generate Questions</button>
+        </article>
+
+        <article class="study-card-clean">
+          <h3>🎤 Viva Q&A</h3>
+          <p>Prepare short viva answers topic-wise.</p>
+          <button type="button" data-study-action="viva">Generate Viva</button>
+        </article>
+
+        <article class="study-card-clean">
+          <h3>🗓️ Revision Plan</h3>
+          <p>Create 3–7 day revision schedule.</p>
+          <button type="button" data-study-action="revision">Create Plan</button>
+        </article>
+      </div>
+
+      <article class="study-upload-clean">
+        <h3>📄 Upload Syllabus PDF/Text</h3>
+        <p>Upload syllabus file and extract content for notes/questions.</p>
+        <input id="studyFileInput" type="file" accept=".txt,.md,.pdf,.doc,.docx">
+        <button id="uploadSyllabusBtn" type="button" class="cf-secondary-btn">Upload Syllabus</button>
+        <div id="studyResultBox" class="study-result-box-clean"></div>
+      </article>
+    </section>
+
+    <section class="section pricing-section-clean" id="pricing">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Pricing</p>
+          <h2>Simple Plans</h2>
+          <p class="section-subtitle">Start free, upgrade only when you need more AI limits and saved progress.</p>
+        </div>
+        <button id="refreshPlanBtn" type="button" class="cf-secondary-btn">Refresh Plan →</button>
+      </div>
+
+      <div class="pricing-grid-clean">
+        <article class="pricing-card-clean">
+          <h3>Free</h3>
+          <div class="price-clean">₹0<span>/month</span></div>
+          <ul>
+            <li>10 AI questions/day</li>
+            <li>Basic subjects</li>
+            <li>DSA animation demo</li>
+            <li>Basic dashboard</li>
+          </ul>
+          <button type="button" class="cf-secondary-btn">Current / Start Free</button>
+        </article>
+
+        <article class="pricing-card-clean featured">
+          <span class="best-badge-clean">Best</span>
+          <h3>Premium</h3>
+          <div class="price-clean">₹199<span>/month</span></div>
+          <ul>
+            <li>Higher AI question limit</li>
+            <li>Quiz + roadmap tracking</li>
+            <li>Code explain AI</li>
+            <li>Saved progress</li>
+          </ul>
+          <button id="premiumPlanBtn" type="button" class="cf-primary-btn">Upgrade with Razorpay</button>
+        </article>
+
+        <article class="pricing-card-clean">
+          <h3>Your Plan</h3>
+          <p id="currentPlanText">Login to check plan.</p>
+          <p id="currentUsageText">Usage will appear here.</p>
+          <button id="checkPlanBtn" type="button" class="cf-secondary-btn">Check Status</button>
+        </article>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="section pro-chat-section" id="proChat">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Pro AI Tutor</p>
+          <h2>Chat with ConceptFlow AI</h2>
+        </div>
+        <div class="chat-actions">
+          <button id="newChatBtn">New Chat</button>
+          <button id="loadHistoryBtn">History</button>
+        </div>
+      </div>
+
+      <div class="pro-chat-layout">
+        <aside class="chat-sidebar">
+          <h3>Quick Prompts</h3>
+          <button data-pro-prompt="Teach me DBMS from basics with examples and interview questions.">DBMS Basics</button>
+          <button data-pro-prompt="Explain Binary Search step by step with dry run.">Binary Search</button>
+          <button data-pro-prompt="Explain Operating System scheduling in exam format.">OS Scheduling</button>
+          <button data-pro-prompt="Create a 5-day revision plan for Machine Learning.">ML Revision Plan</button>
+          <button data-pro-prompt="Explain Python from basics with code examples and interview questions.">Python Full Guide</button>
+        </aside>
+
+        <div class="chat-window">
+          <div class="chat-messages" id="chatMessages">
+            <div class="chat-message ai">
+              <b>ConceptFlow AI</b>
+              <p>Ask me any IT, coding, DSA, exam, roadmap or interview question.</p>
+            </div>
+          </div>
+
+          <div class="chat-mode-row">
+            <button class="mode-pill active" data-mode="pro-chat">Balanced</button>
+            <button class="mode-pill" data-mode="short">Short</button>
+            <button class="mode-pill" data-mode="exam">Exam</button>
+            <button class="mode-pill" data-mode="deep">Deep</button>
+          </div>
+
+          <div class="chat-input-row">
+            <textarea id="proChatInput" rows="2" placeholder="Ask a detailed question..."></textarea>
+            <button id="sendProChatBtn">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Student Panel</p>
+          <h2>Learning Dashboard</h2>
+        </div>
+        <button id="refreshProgressBtn">Refresh Progress →</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <article class="dashboard-card profile-card">
+          <h3>👤 Student Profile</h3>
+          <p id="dashboardUser">Guest Student</p>
+          <button class="outline-btn" id="dashboardLoginBtn">Login / Signup</button>
+        </article>
+
+        <article class="dashboard-card">
+          <h3>📈 Progress</h3>
+          <div class="progress-line"><span id="progressBar"></span></div>
+          <p id="progressText">Loading progress...</p>
+        </article>
+
+        <article class="dashboard-card">
+          <h3>🎯 Weak Topics</h3>
+          <ul id="weakTopicsList"><li>Loading...</li></ul>
+        </article>
+
+        <article class="dashboard-card">
+          <h3>🔥 XP & Streak</h3>
+          <p><b id="xpValue">0</b> XP</p>
+          <p><b id="streakValue">0</b> Days streak</p>
+        </article>
+
+        <article class="dashboard-card ai-status-card">
+          <h3>🤖 AI Status</h3>
+          <p id="aiStatusText">Checking AI provider...</p>
+          <button class="outline-btn" id="checkAIStatusBtn">Check AI</button>
+        </article>
+
+        <article class="dashboard-card history-card">
+          <h3>🕘 Recent AI History</h3>
+          <div id="historyPanel"><p>Login to see saved history.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section admin-section" id="admin">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Admin Control</p>
+          <h2>Admin Dashboard</h2>
+          <p class="section-subtitle">Login with admin credentials to view real platform stats, users, payments and AI history.</p>
+        </div>
+        <button id="adminLogoutBtn" type="button" class="admin-logout-btn">Logout Admin</button>
+      </div>
+
+      <div class="admin-grid-clean">
+        <article class="admin-card-clean">
+          <h3>Admin Login</h3>
+          <input id="adminEmail" type="email" placeholder="Admin email" value="admin@conceptflow.ai">
+          <input id="adminPassword" type="password" placeholder="Admin password" value="Admin@12345">
+          <button id="adminLoginBtn" type="button">Login Admin</button>
+          <p class="admin-hint-clean">
+            Default local: <b>admin@conceptflow.ai</b> / <b>Admin@12345</b><br>
+            <small>After changing ADMIN_EMAIL/ADMIN_PASSWORD, run <code>npm run seed</code>.</small>
+          </p>
+          <p id="adminLoginMsg" class="admin-msg-clean"></p>
+        </article>
+
+        <article class="admin-card-clean">
+          <h3>Platform Stats</h3>
+          <div id="adminStatsBox" class="admin-stats-box">
+            <p>Login as admin to view stats.</p>
+          </div>
+        </article>
+      </div>
+
+      <div id="adminLivePanel" class="admin-live-panel-clean"></div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="section dsa-engine-section" id="dsaEngine">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">DSA Animation Engine</p>
+          <h2>Visualize Algorithms Step-by-Step</h2>
+          <p class="section-subtitle">Binary Search, Sorting, Stack, Queue and Linked List with animation, speed control and explanation.</p>
+        </div>
+      </div>
+
+      <div class="dsa-engine-layout">
+        <aside class="dsa-control-panel">
+          <h3>Choose Animation</h3>
+          <div class="dsa-algo-buttons">
+            <button class="active" data-dsa-algo="binarySearch" type="button">Binary Search</button>
+            <button data-dsa-algo="bubbleSort" type="button">Bubble Sort</button>
+            <button data-dsa-algo="selectionSort" type="button">Selection Sort</button>
+            <button data-dsa-algo="insertionSort" type="button">Insertion Sort</button>
+            <button data-dsa-algo="stack" type="button">Stack</button>
+            <button data-dsa-algo="queue" type="button">Queue</button>
+            <button data-dsa-algo="linkedList" type="button">Linked List</button>
+          </div>
+
+          <label>Array / Values</label>
+          <input id="dsaArrayInput" value="2,5,8,12,16,23,38,56,72" placeholder="Example: 2,5,8,12">
+
+          <label>Target / Value</label>
+          <input id="dsaTargetInput" value="23" placeholder="Target for search / value for stack">
+
+          <label>Speed</label>
+          <input id="dsaSpeedInput" type="range" min="150" max="1200" value="550">
+
+          <div class="dsa-actions">
+            <button id="dsaStartBtn" type="button">Start</button>
+            <button id="dsaPauseBtn" type="button">Pause</button>
+            <button id="dsaResetBtn" type="button">Reset</button>
+          </div>
+
+          <button id="dsaExplainBtn" type="button" class="dsa-ai-btn">Explain with AI</button>
+        </aside>
+
+        <div class="dsa-stage-card">
+          <div class="dsa-stage-top">
+            <div>
+              <h3 id="dsaAlgoTitle">Binary Search</h3>
+              <p id="dsaAlgoMeta">Time: O(log n) • Space: O(1)</p>
+            </div>
+            <span id="dsaStatusBadge">Ready</span>
+          </div>
+
+          <div id="dsaVisualStage" class="dsa-visual-stage"></div>
+
+          <div class="dsa-step-box">
+            <h4>Current Step</h4>
+            <p id="dsaStepText">Choose an algorithm and click Start.</p>
+          </div>
+
+          <div class="dsa-pseudo-box">
+            <h4>Pseudocode</h4>
+            <pre id="dsaPseudoCode"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section courses-section" id="courses">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Structured Learning</p>
+          <h2>Real Course System</h2>
+          <p class="section-subtitle">Learn subject-wise: units, topics, lessons, animations, quizzes and progress tracking.</p>
+        </div>
+      </div>
+      <div class="course-flow">
+        <article class="course-card" data-course="Data Structures and Algorithms">
+          <span>01</span><h3>DSA Mastery</h3>
+          <p>Arrays, linked list, stack, queue, tree, graph, sorting, searching, recursion and complexity.</p>
+          <button class="course-start-btn" type="button">Start Course</button>
+        </article>
+        <article class="course-card" data-course="Full Stack Development">
+          <span>02</span><h3>Full Stack Development</h3>
+          <p>HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, auth, deployment and projects.</p>
+          <button class="course-start-btn" type="button">Start Course</button>
+        </article>
+        <article class="course-card" data-course="AI ML Deep Learning">
+          <span>03</span><h3>AI / ML / Deep Learning</h3>
+          <p>Python, NumPy, pandas, ML basics, neural networks, model training, evaluation and projects.</p>
+          <button class="course-start-btn" type="button">Start Course</button>
+        </article>
+        <article class="course-card" data-course="Computer Science Core">
+          <span>04</span><h3>CS Core Subjects</h3>
+          <p>DBMS, OS, CN, OOP, software engineering, compiler basics and interview preparation.</p>
+          <button class="course-start-btn" type="button">Start Course</button>
+        </article>
+      </div>
+      <div class="learning-path-panel">
+        <h3>How each topic works</h3>
+        <div class="path-steps">
+          <span>Lesson</span><span>Animation</span><span>Example</span><span>Quiz</span><span>Progress</span><span>Certificate</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section languages-expanded" id="allLanguages">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">All Programming Languages</p>
+          <h2>Languages, Frameworks & Developer Tools</h2>
+          <p class="section-subtitle">Click any card to ask AI for roadmap, examples, interview questions and projects.</p>
+        </div>
+      </div>
+      <div class="all-language-grid" id="allLanguageGrid"></div>
+    </section>
+
+    <section class="section pro-dashboard-section" id="proDashboard">
+      <div class="section-head">
+        <div><p class="section-kicker">User Dashboard Pro</p><h2>Learning Analytics</h2></div>
+      </div>
+      <div class="pro-dashboard-grid">
+        <article><h3>Continue Learning</h3><p>DSA → Binary Search</p><button data-learn="Binary Search" type="button">Continue</button></article>
+        <article><h3>Weak Topics</h3><p>Recursion, DBMS Joins, OS Scheduling</p><button data-learn="Weak topics revision plan" type="button">Revise</button></article>
+        <article><h3>Saved Answers</h3><p>Save AI explanations and revisit later.</p><button id="openHistoryFromDash" type="button">Open History</button></article>
+        <article><h3>Certificate Progress</h3><p>Complete 80% topics to unlock certificate.</p><div class="mini-progress"><span style="width:42%"></span></div></article>
+      </div>
+    </section>
+
+
+    <section class="section certificate-section" id="certificate">
+      <div class="certificate-card">
+        <div><p class="section-kicker">Certificate</p><h2>Generate Completion Certificate</h2><p>After course completion, users can download a certificate with a unique ID.</p></div>
+        <button id="generateCertificateBtn" type="button">Preview Certificate</button>
+      </div>
+    </section>
+
+    <section class="section trust-section">
+      <div class="section-head"><div><p class="section-kicker">Trust</p><h2>Why students use ConceptFlow AI</h2></div></div>
+      <div class="trust-grid">
+        <article><h3>Exam Ready</h3><p>Answers are structured for theory, viva and interviews.</p></article>
+        <article><h3>Visual Learning</h3><p>DSA and difficult topics are explained with step-by-step animations.</p></article>
+        <article><h3>Career Focused</h3><p>Roadmaps are based on skills, projects, salary scope and market demand.</p></article>
+      </div>
+    </section>
+
+
+    <section class="section faq-contact-section" id="contact">
+      <div class="faq-grid">
+        <article class="faq-card">
+          <h3>FAQ</h3>
+          <details open><summary>Does AI work after deployment?</summary><p>Yes, if Gemini/OpenAI/Ollama provider is configured correctly in environment variables.</p></details>
+          <details><summary>Can admin manage users?</summary><p>Yes, admin can view users, make premium/free and delete users.</p></details>
+          <details><summary>Can I add more subjects?</summary><p>Yes, admin APIs and UI foundation are ready for subject management.</p></details>
+        </article>
+        <article class="contact-card">
+          <h3>Contact</h3>
+          <input id="contactName" placeholder="Your name">
+          <input id="contactEmail" placeholder="Email">
+          <textarea id="contactMessage" placeholder="Message"></textarea>
+          <button id="contactSubmitBtn" type="button">Send Message</button>
+          <p id="contactResult"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section policies-section">
+      <div class="policy-links">
+        <button data-policy="privacy" type="button">Privacy Policy</button>
+        <button data-policy="terms" type="button">Terms & Conditions</button>
+        <button data-policy="refund" type="button">Refund Policy</button>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div>
+        <p class="section-kicker">Ready to Learn</p>
+        <h2>Start with one concept, then master the whole subject.</h2>
+        <p>Search any topic, ask AI, watch animation, practice questions, and follow a roadmap.</p>
+      </div>
+      <a class="primary-btn" href="#home">Ask AI Now →</a>
+    </section>
+
+
+</main>
+
+
+  <div class="modal-overlay" id="appModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="script.js?v=correct-orbit-only"></script>
+  <script src="dsa-visualizer.js?v=correct-orbit-only"></script>
+  <script src="app-final-clean.js?v=correct-orbit-only"></script>
+</body>
+</html>
